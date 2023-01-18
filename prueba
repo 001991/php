@@ -1,0 +1,63 @@
+<?php
+
+class Persona
+{
+    public $documento;
+    public $nombre;
+    public $edad;
+    public $nacionalidad;
+
+    public function __construct(){
+
+    }
+
+    public function imprimir(){
+        echo "Documento: " . $this->documento . "<br>";
+        echo "Nombre: " . $this->nombre . "<br>";
+        echo "Edad: " . $this->edad . "<br>";
+        echo "Nacionalidad: " . $this->nacionalidad . "<br><br>";
+    }
+
+}
+class Alumno extends Persona
+{
+    public $legajo;
+    public $notaPortfolio;
+    public $notaPhp;
+    public $notaProyecto;
+
+    public function __construct()
+    {
+        $this->notaPortfolio = 0.0;
+        $this->notaPhp = 0.0;
+        $this->notaProyecto = 0.0;
+    }
+
+    public function imprimir()
+    {
+        echo "Nombre: " . $this->nombre . "<br>";
+        echo "Nota Portfolio: " . $this->notaPortfolio . "<br>";
+        echo "Nota PHP: " . $this->notaPhp . "<br>";
+        echo "Nota Proyecto: " . $this->notaProyecto . "<br>";
+        echo "Promedio: " . $this->calcularPromedio() . "<br><br>";
+    }
+
+    public function calcularPromedio()
+    {
+
+    }
+}
+class Docente extends Persona
+{
+    public $especialidad;
+
+    public function imprimir()
+    {
+        
+    }
+
+    public function imprimirEspecialidadesHabilitadas()
+    {
+
+    }
+}

@@ -64,6 +64,7 @@ $aproductos[] = array(
                             <td><?php echo $aproductos[0]["marca"] ?></td>
                             <td><?php echo $aproductos[0]["modelo"] ?></td>
                             <td><?php
+                           
 
                                 if ($aproductos[0]["stock"]==0) {
 
@@ -76,12 +77,13 @@ $aproductos[] = array(
                                     echo "hay stock";
                                 }
 
-                                ?>
+                                ?>x|
                             </td>
                             <td><?php echo $aproductos[0]["precio"] ?></td>
                             <td> <button class="bt-button btn-primary btn">Acción</button></td>
 
                         </tr>
+                        
 
                         <tr>
                             <td><?php echo $aproductos[1]["nombre"] ?></td>
@@ -104,7 +106,6 @@ $aproductos[] = array(
                             </td>
                             <td><?php echo $aproductos[1]["precio"] ?></td>
                             <td> <button class="bt-button btn-primary btn">Acción</button></td>
-
                         </tr>
 
                         <tr>
@@ -112,6 +113,7 @@ $aproductos[] = array(
                             <td><?php echo $aproductos[2]["marca"] ?></td>
                             <td><?php echo $aproductos[2]["modelo"] ?></td>
                             <td><?php
+                            $subtotal = 0;
 
                                 if ($aproductos[2]["stock"]== 0) {
 
@@ -130,11 +132,23 @@ $aproductos[] = array(
                             <td> <button class="bt-button btn-primary btn">Acción</button></td>
 
                         </tr>
+                        <?php
+                        $subtotal = $subtotal + $aproductos[0]["precio"];
+                        $subtotal = $subtotal + $aproductos[1]["precio"];
+                        $subtotal = $subtotal + $aproductos[2]["precio"]
+                        ?>
 
                     </tbody>
                 </table>
 
             </div>
+        </div>
+        <div class="row">
+            <div class="col 12 py-5">
+                <h2>El subtotal es: $<?php echo $subtotal; ?></h2>
+
+            </div>
+
         </div>
 
     </main>
